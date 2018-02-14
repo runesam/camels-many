@@ -8,125 +8,141 @@
 <div id="app">
     <header>
         <div class="languages">
-            <img src="http://kamelrechner.de/img/flag-de.png" class="germany" alt="germany language">
-            <img src="http://kamelrechner.de/img/flag-en.png" class="english" alt="english language">
-            <img src="http://kamelrechner.de/img/flag-es.png" class="spanish" alt="spanish language">
+            <div>
+                <img src="http://kamelrechner.de/img/flag-de.png" class="germany" alt="germany language">
+            </div>
+            <div>
+                <img src="http://kamelrechner.de/img/flag-en.png" class="english" alt="english language">
+            </div>
+            <div>
+                <img src="http://kamelrechner.de/img/flag-es.png" class="spanish" alt="spanish language">
+            </div>
         </div>
-        <h3>How many camels for your boyfriend?</h3>
+        <div class="logo">
+            <a href="">
+                <img src="http://kamelrechner.de/img/camel-logo-2.png" alt="logo">
+            </a>
+        </div>
+        <div class="title">
+            <h3>How many camels for your boyfriend?</h3>
+        </div>
     </header>
     <div class="container">
-        <div class="slider age">
-            <div class="data">
-                <label for="myRange" class="text">Age</label>
-                <span class="number">70</span>
-            </div>
-            <div class="range">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-            </div>
-        </div>
-        <div class="slider height">
-            <div class="data">
-                <label for="myRange2" class="text">Height (cm)</label>
-                <span class="number">220</span>
-            </div>
-            <div class="range">
-                <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
-            </div>
-        </div>
-        <div class="select hairColor">
-            <label for="hairColor"></label>
-            <select id="hairColor" name="hairColor">
-                <option value="blond">blond</option>
-                <option value="brown">brown</option>
-                <option value="black">black</option>
-                <option value="red">red</option>
-                <option value="grey">grey</option>
-            </select>
-        </div>
-        <hr>
-        <div class="radio hairLength">
-            <span>Hair Length</span>
-            <div class="inputs">
-                <input type="radio" name="hair" value="long" id="longH" checked="checked">
-                <label for="longH">long</label>
-                <input type="radio" name="hair" value="middle" id="middleH">
-                <label for="middleH">middle</label>
-                <input type="radio" name="hair" value="short" id="shortH">
-                <label for="shortH">short</label>
-                <input type="radio" name="hair" value="bald" id="baldH">
-                <label for="baldH">bald</label>
-            </div>
-        </div>
-        <hr>
-        <div class="radio eyeColor">
-            <span>Eye Color</span>
-            <div>
-                <div>
-                    <input id="blue" type="radio" name="eyeColor" value="blue" checked="checked">
-                    <label for="blue" class="label-body">blue</label>
+        <form action="">
+            <div class="slider age">
+                <div class="data">
+                    <label for="myRange" class="text">Age</label>
+                    <span class="number">70</span>
                 </div>
-                <div>
-                    <input id="green" type="radio" name="eyeColor" value="green">
-                    <label for="green" class="label-body">green</label>
-                </div>
-                <div>
-                    <input id="brown" type="radio" name="eyeColor" value="brown">
-                    <label for="brown" class="label-body">brown</label>
-                </div>
-                <div>
-                    <input id="grey" type="radio" name="eyeColor" value="grey">
-                    <label for="grey" class="label-body">grey</label>
+                <div class="range">
+                    <input type="range" min="1" max="100" value="50" class="sliderRange" id="myRange">
                 </div>
             </div>
-        </div>
-        <hr>
-        <div class="radio beard">
-            <span>Beard</span>
-            <div>
-                <input type="radio" name="beard" value="none" id="none" checked="checked">
-                <label for="none">
-                    <img src="http://kamelrechner.de/img/beard-none.png" alt="none">
-                </label>
-                <input type="radio" name="beard" value="small" id="small">
-                <label for="small">
-                    <img src="http://kamelrechner.de/img/beard-small.png" alt="small">
-                </label>
-                <input type="radio" name="beard" value="middle" id="middle">
-                <label for="middle">
-                    <img src="http://kamelrechner.de/img/beard-middle.png" alt="middle">
-                </label>
-                <input type="radio" name="beard" value="large" id="large">
-                <label for="large">
-                    <img src="http://kamelrechner.de/img/beard-full.png" alt="large">
-                </label>
+            <div class="slider height">
+                <div class="data">
+                    <label for="myRange2" class="text">Height (cm)</label>
+                    <span class="number">220</span>
+                </div>
+                <div class="range">
+                    <input type="range" min="1" max="100" value="50" class="sliderRange" id="myRange2">
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="radio body">
-            <span>Body</span>
-            <div>
-                <input type="radio" name="body" value="muscle" id="muscle" checked="checked">
-                <label for="muscle">
-                    <img src="http://kamelrechner.de/img/body-1.png" alt="muscle">
-                </label>
-                <input type="radio" name="body" value="normal" id="normal">
-                <label for="normal">
-                    <img src="http://kamelrechner.de/img/body-2.png" alt="normal">
-                </label>
-                <input type="radio" name="body" value="chubby" id="chubby">
-                <label for="chubby">
-                    <img src="http://kamelrechner.de/img/body-3.png" alt="chubby">
-                </label>
+            <div class="select hairColor">
+                <label for="hairColor">Hair Color</label>
+                <select id="hairColor" name="hairColor">
+                    <option value="blond">blond</option>
+                    <option value="brown">brown</option>
+                    <option value="black">black</option>
+                    <option value="red">red</option>
+                    <option value="grey">grey</option>
+                </select>
             </div>
-        </div>
-        <hr>
-        <div class="submit">
-            <input type="hidden" name="gender" value="male">
-            <button type="submit">calculate</button>
-        </div>
+            <hr>
+            <div class="radio hairLength">
+                <span>Hair Length</span>
+                <div class="inputs">
+                    <input type="radio" name="hair" value="long" id="longH" checked="checked">
+                    <label for="longH" class="checked">long</label>
+                    <input type="radio" name="hair" value="middle" id="middleH">
+                    <label for="middleH">middle</label>
+                    <input type="radio" name="hair" value="short" id="shortH">
+                    <label for="shortH">short</label>
+                    <input type="radio" name="hair" value="bald" id="baldH">
+                    <label for="baldH">bald</label>
+                </div>
+            </div>
+            <hr>
+            <div class="eyeColor">
+                <span>Eye Color</span>
+                <div class="inputs">
+                    <div>
+                        <input id="blue" type="radio" name="eyeColor" value="blue" checked="checked">
+                        <label for="blue" class="label-body">blue</label>
+                    </div>
+                    <div>
+                        <input id="green" type="radio" name="eyeColor" value="green">
+                        <label for="green" class="label-body">green</label>
+                    </div>
+                    <div>
+                        <input id="brown" type="radio" name="eyeColor" value="brown">
+                        <label for="brown" class="label-body">brown</label>
+                    </div>
+                    <div>
+                        <input id="grey" type="radio" name="eyeColor" value="grey">
+                        <label for="grey" class="label-body">grey</label>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="radio beard">
+                <span>Beard</span>
+                <div class="inputs">
+                    <input type="radio" name="beard" value="none" id="none" checked="checked">
+                    <label for="none" class="checked">
+                        <img src="http://kamelrechner.de/img/beard-none.png" alt="none">
+                    </label>
+                    <input type="radio" name="beard" value="small" id="small">
+                    <label for="small">
+                        <img src="http://kamelrechner.de/img/beard-small.png" alt="small">
+                    </label>
+                    <input type="radio" name="beard" value="middle" id="middle">
+                    <label for="middle">
+                        <img src="http://kamelrechner.de/img/beard-middle.png" alt="middle">
+                    </label>
+                    <input type="radio" name="beard" value="large" id="large">
+                    <label for="large">
+                        <img src="http://kamelrechner.de/img/beard-full.png" alt="large">
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <div class="radio body">
+                <span>Body</span>
+                <div class="inputs">
+                    <input type="radio" name="body" value="muscle" id="muscle" checked="checked">
+                    <label for="muscle">
+                        <img src="http://kamelrechner.de/img/body-1.png" alt="muscle">
+                    </label>
+                    <input type="radio" name="body" value="normal" id="normal">
+                    <label for="normal">
+                        <img src="http://kamelrechner.de/img/body-2.png" alt="normal">
+                    </label>
+                    <input type="radio" name="body" value="chubby" id="chubby">
+                    <label for="chubby">
+                        <img src="http://kamelrechner.de/img/body-3.png" alt="chubby">
+                    </label>
+                </div>
+            </div>
+            <hr>
+            <div class="submit">
+                <input type="hidden" name="gender" value="male">
+                <button type="submit">calculate</button>
+            </div>
+        </form>
         <br>
         <br>
         <hr>
+        <a href="https://github.com/runesam">https://github.com/runesam</a>
     </div>
 </div>
 <script src="./index.js"></script>

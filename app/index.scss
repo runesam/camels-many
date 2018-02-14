@@ -1,3 +1,266 @@
-body {
+@mixin boxShadow($option) {
+  -webkit-box-shadow: $option;
+  -moz-box-shadow: $option;
+  box-shadow: $option;
+}
+@mixin borderRadius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+@mixin transition($element, $property, $time) {
+  -webkit-transition: $element $property $time;
+  -moz-transition: $element $property $time;
+  -o-transition: $element $property $time;
+  transition: $element $property $time;
+}
 
+body {
+  .slidecontainer {
+    width: 100%;
+  }
+
+  .sliderRange {
+    -webkit-appearance: none;
+    @include borderRadius(5px);
+    width: 100%;
+    height: 10px;
+    background: #e8972c;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .sliderRange:hover {
+    opacity: 1;
+  }
+
+  .sliderRange::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: whitesmoke;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .sliderRange::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background: whitesmoke;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  margin: 0;
+  font-family: sans-serif;
+  #app {
+    header {
+      background: url('http://kamelrechner.de/img/more-news-bg.jpg') top center no-repeat;
+      height: 100px;
+      overflow: hidden;
+      .languages {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        div {
+          float: left;
+          width: 30px;
+          height: 25px;
+          margin-right: 10px;
+          overflow: hidden;
+          &:hover {
+            cursor: pointer;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+      .logo {
+        width: 130px;
+        overflow: hidden;
+        float: left;
+        a {
+          float: left;
+          width: 100%;
+          img {
+            width: 100px;
+            display: block;
+            margin: 10px auto;
+          }
+        }
+      }
+      .title {
+        color: white;
+        width: calc(100% - 130px);
+        h3 {
+          text-align: center;
+          margin-top: 35px;
+          font-size: 1.4em;
+        }
+      }
+    }
+    .container {
+      font-size: 1.3em;
+      padding: 20px 30px;
+      .slider {
+        height: 100px;
+        .data {
+          display: inline-block;
+          width: 100%;
+          label {
+            width: 50%;
+            text-align: left;
+            display: block;
+            float: left;
+          }
+          span {
+            width: 50%;
+            float: right;
+            display: block;
+            text-align: right;
+          }
+        }
+        .range {
+          margin-top: 20px;
+        }
+      }
+      .select {
+        label {
+          display: block;
+          width: 100%;
+        }
+        select {
+          display: block;
+          width: 100%;
+          font-size: 0.8em;
+          padding: 10px;
+          margin-top: 20px;
+          height: 40px;
+          @include borderRadius(5px);
+          outline: #e8972c;
+        }
+      }
+      .radio {
+        span {
+          display: block;
+          width: 100%;
+          line-height: 60px;
+        }
+        .inputs {
+          display: inline-block;
+          width: 100%;
+          border: 1px solid #e8972c;
+          @include borderRadius(5px);
+          input {
+            display: none;
+          }
+          label {
+            font-size: 0.8em;
+            line-height: 35px;
+            width: calc(25% - 1px);
+            display: block;
+            float: left;
+            text-align: center;
+            border-right: 1px solid #e8972c;
+            &:last-child {
+              border: none;
+              width: 25%;
+            }
+            &:hover, &.checked {
+              cursor: pointer;
+              background-color: #e8972c;
+              color: white;
+            }
+          }
+        }
+      }
+      .eyeColor {
+        span {
+          display: block;
+          width: 100%;
+          line-height: 60px;
+        }
+        .inputs {
+          display: inline-block;
+          width: 100%;
+          font-size: 0.8em;
+          & > div {
+            display: block;
+            float: left;
+            margin-right: 15px;
+          }
+        }
+      }
+      .beard, .body {
+        label {
+          height: 90px;
+          overflow: hidden;
+          img {
+            height: 80px;
+            @include transition(all, ease, 0.5s);
+          }
+          &:hover {
+            img {
+              height: 90px;
+            }
+          }
+        }
+      }
+      .body {
+        .inputs {
+          label {
+            overflow: hidden;
+            height: 100px;
+            width: calc((100% / 3) - 1px);
+            &:last-child {
+              width: calc(100% / 3);
+            }
+            img {
+              margin-top: 3px;
+              height: 90px;
+            }
+            &:hover {
+              img {
+                height: 100px;
+              }
+            }
+          }
+        }
+      }
+      .submit {
+        margin-top: 20px;
+        button {
+          border: none;
+          outline: none;
+          color: white;
+          line-height: 40px;
+          background-color: #e8972c;
+          width: 100%;
+          display: block;
+          font-size: 1em;
+          margin: 0 auto;
+          @include borderRadius(5px);
+          &:hover {
+            cursor: pointer;
+            background-color: chocolate;
+          }
+        }
+      }
+      a {
+        display: inline-block;
+        width: 100%;
+        font-size: 15px;
+        color: gray;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+  }
 }
