@@ -1,5 +1,6 @@
 import './index.scss';
-import utils from './utils';
+import generalUtils from './utils/generalUtils';
+import langUtils from './utils/langUtils';
 
 class App {
 	constructor() {
@@ -9,61 +10,77 @@ class App {
 		this.handleBeardChange = this.handleBeardChange.bind(this);
 		this.handleBodyChange = this.handleBodyChange.bind(this);
 		this.handleReset = this.handleReset.bind(this);
-		window.addEventListener('load', this.onWindowLoad, false);
+		this.handleChangeLang = this.handleChangeLang.bind(this);
+		window.addEventListener('load', this.onWindowLoad.bind(this), false);
 	}
+
 	onWindowLoad() {
-		if (this) {
-			this.form = document.getElementById("myForm");
+		this.form = document.getElementById('myForm');
+		langUtils.setContent();
+		if (this.form) {
 			this.form.addEventListener('submit', (event) => {
 				event.preventDefault();
-				const body = utils.getFormData(this.form);
+				const body = generalUtils.getFormData(this.form);
 				console.log(body);
 				// request goes here
-				// utils.postData('result', body).then(res => console.log(res));
-				utils.handleShowResult(this.form, 70);
+				// generalUtils.postData('result', body).then(res => console.log(res));
+				generalUtils.handleShowResult(body);
 			});
 		}
 	}
+
 	handleAgeOnInput(e) {
 		const { value } = e.target;
 		const ageNumber = document.querySelector('.ageNumber');
 		ageNumber.innerHTML = value;
 	}
+
 	handleHeightOnInput(e) {
 		const { value } = e.target;
 		const heightNumber = document.querySelector('.heightNumber');
 		heightNumber.innerHTML = value;
 	}
+
 	handleHairLengthChange(e) {
 		const { value } = e.target;
-		document.querySelectorAll('.hairLength label').forEach(dom => {
-			dom.className = '';
-			if (dom.innerHTML === value) {
-				dom.className = 'checked';
+		document.querySelectorAll('.hairLength label').forEach((dom) => {
+			const element = dom;
+			element.className = '';
+			if (element.innerHTML === value) {
+				element.className = 'checked';
 			}
 		});
 	}
+
 	handleBeardChange(e) {
 		const { value } = e.target;
-		document.querySelectorAll('.beard label').forEach(dom => {
-			dom.className = '';
-			if (dom.id.includes(value)) {
-				dom.className = 'checked';
+		document.querySelectorAll('.beard label').forEach((dom) => {
+			const element = dom;
+			element.className = '';
+			if (element.id.includes(value)) {
+				element.className = 'checked';
 			}
 		});
 	}
+
 	handleBodyChange(e) {
 		const { value } = e.target;
-		document.querySelectorAll('.body label').forEach(dom => {
-			dom.className = '';
-			if (dom.id.includes(value)) {
-				dom.className = 'checked';
+		document.querySelectorAll('.body label').forEach((dom) => {
+			const element = dom;
+			element.className = '';
+			if (element.id.includes(value)) {
+				element.className = 'checked';
 			}
 		});
 	}
+
 	handleReset() {
-		document.querySelector('form').style.display = 'block';
+		this.form.style.display = 'block';
 		document.querySelector('.result').style.display = 'none';
+	}
+
+	handleChangeLang(code) {
+		langUtils.changeLang(code);
 	}
 }
 

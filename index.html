@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Many Camels</title>
+    <title lang="title"></title>
 </head>
 <body>
 <div id="app">
     <header>
         <div class="languages">
-            <div>
+            <div onclick="app.handleChangeLang('langDe')">
                 <img src="http://kamelrechner.de/img/flag-de.png" class="germany" alt="germany language">
             </div>
-            <div>
+            <div onclick="app.handleChangeLang('langEn')">
                 <img src="http://kamelrechner.de/img/flag-en.png" class="english" alt="english language">
             </div>
-            <div>
+            <div onclick="app.handleChangeLang('langEs')">
                 <img src="http://kamelrechner.de/img/flag-es.png" class="spanish" alt="spanish language">
             </div>
         </div>
@@ -24,14 +24,14 @@
             </a>
         </div>
         <div class="title">
-            <h3>How many camels for your boyfriend?</h3>
+            <h3 lang="title_text"></h3>
         </div>
     </header>
     <div class="container">
         <form id="myForm">
             <div class="slider age">
                 <div class="data">
-                    <label for="age" class="text">Age</label>
+                    <label for="age" class="text" lang="age_label"></label>
                     <span class="ageNumber">70</span>
                 </div>
                 <div class="range">
@@ -40,7 +40,7 @@
             </div>
             <div class="slider height">
                 <div class="data">
-                    <label for="height" class="text">Height (cm)</label>
+                    <label for="height" class="text" lang="height_label"></label>
                     <span class="heightNumber">180</span>
                 </div>
                 <div class="range">
@@ -48,54 +48,54 @@
                 </div>
             </div>
             <div class="select hairColor">
-                <label for="hairColor">Hair Color</label>
+                <label for="hairColor" lang="hair_color_label"></label>
                 <select id="hairColor" name="hairColor">
-                    <option value="blond">blond</option>
-                    <option value="brown">brown</option>
-                    <option value="black">black</option>
-                    <option value="red">red</option>
-                    <option value="grey">grey</option>
+                    <option value="blond" lang="hair_blond"></option>
+                    <option value="brown" lang="hair_brown"></option>
+                    <option value="black" lang="hair_black"></option>
+                    <option value="red" lang="hair_red"></option>
+                    <option value="grey" lang="hair_grey"></option>
                 </select>
             </div>
             <hr>
             <div class="radio hairLength">
-                <span>Hair Length</span>
+                <span lang="hair_length_label"></span>
                 <div class="inputs">
                     <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="long" id="longH" checked="checked">
-                    <label for="longH" class="checked">long</label>
+                    <label for="longH" class="checked" lang="hair_long"></label>
                     <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="middle" id="middleH">
-                    <label for="middleH">middle</label>
+                    <label for="middleH" lang="hair_middle"></label>
                     <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="short" id="shortH">
-                    <label for="shortH">short</label>
+                    <label for="shortH" lang="hair_short"></label>
                     <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="bald" id="baldH">
-                    <label for="baldH">bald</label>
+                    <label for="baldH" lang="hair_bold"></label>
                 </div>
             </div>
             <hr>
             <div class="eyeColor">
-                <span>Eye Color</span>
+                <span lang="eye_color_label"></span>
                 <div class="inputs">
                     <div>
                         <input id="blue" type="radio" name="eyeColor" value="blue" checked="checked">
-                        <label for="blue" class="label-body">blue</label>
+                        <label for="blue" class="label-body" lang="eye_blue"></label>
                     </div>
                     <div>
                         <input id="green" type="radio" name="eyeColor" value="green">
-                        <label for="green" class="label-body">green</label>
+                        <label for="green" class="label-body" lang="eye_green"></label>
                     </div>
                     <div>
                         <input id="brown" type="radio" name="eyeColor" value="brown">
-                        <label for="brown" class="label-body">brown</label>
+                        <label for="brown" class="label-body" lang="eye_brown"></label>
                     </div>
                     <div>
                         <input id="grey" type="radio" name="eyeColor" value="grey">
-                        <label for="grey" class="label-body">grey</label>
+                        <label for="grey" class="label-body" lang="eye_gray"></label>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="radio beard">
-                <span>Beard</span>
+                <span lang="beard_label"></span>
                 <div class="inputs">
                     <input type="radio" onchange="app.handleBeardChange(event)" name="beard" value="none" id="none" checked="checked">
                     <label for="none" id="noneLabel" class="checked">
@@ -117,7 +117,7 @@
             </div>
             <hr>
             <div class="radio body">
-                <span>Body</span>
+                <span lang="body_label"></span>
                 <div class="inputs">
                     <input type="radio" onchange="app.handleBodyChange(event)" name="body" value="muscle" id="muscle" checked="checked">
                     <label for="muscle" id="muscleLabel">
@@ -136,22 +136,22 @@
             <hr>
             <div class="submit">
                 <input type="hidden" name="gender" value="male">
-                <button type="submit">calculate</button>
+                <button type="submit" lang="calculate"></button>
             </div>
         </form>
         <div class="result">
             <div class="data">
-                <h3>Your Boyfriend is worth</h3>
+                <h3 lang="result_head"></h3>
                 <h1 id="count">0</h1>
-                <span>camels.</span>
+                <span lang="camels"></span>
             </div>
             <div class="socials">
-                <button class="facebook">post on facebook</button>
-                <button class="twitter">post on twitter</button>
-                <button class="whatsapp">send with WhatsApp</button>
+                <button class="facebook" lang="facebook"></button>
+                <button class="twitter" lang="twitter"></button>
+                <button class="whatsapp" lang="whatsapp"></button>
             </div>
             <div class="reset" >
-                <button onclick="app.handleReset()">calculate again ?</button>
+                <button onclick="app.handleReset()" lang="calc_again"></button>
             </div>
         </div>
         <br>
