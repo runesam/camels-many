@@ -14,7 +14,10 @@ http://kamelrechner.de/de/male
 * Ensure clean commits; you may earn extra points if the commits are small and incremental, so that we can follow your thinking process while solving this exercise.
 
 ## Demo
-    working on it
+https://rrttd-7a83d.firebaseapp.com/
+
+![alt text](https://image.ibb.co/eba9An/image.png)
+
 ## Installation
     npm i
 #### For running the app with tests

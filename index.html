@@ -68,7 +68,7 @@
                     <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="short" id="shortH">
                     <label for="shortH" lang="hair_short"></label>
                     <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="bald" id="baldH">
-                    <label for="baldH" lang="hair_bold"></label>
+                    <label for="baldH" lang="hair_bald"></label>
                 </div>
             </div>
             <hr>
@@ -120,7 +120,7 @@
                 <span lang="body_label"></span>
                 <div class="inputs">
                     <input type="radio" onchange="app.handleBodyChange(event)" name="body" value="muscle" id="muscle" checked="checked">
-                    <label for="muscle" id="muscleLabel">
+                    <label for="muscle" class="checked" id="muscleLabel">
                         <img src="http://kamelrechner.de/img/body-1.png" alt="muscle">
                     </label>
                     <input type="radio" onchange="app.handleBodyChange(event)" name="body" value="normal" id="normal">
