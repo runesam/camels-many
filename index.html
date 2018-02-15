@@ -28,23 +28,23 @@
         </div>
     </header>
     <div class="container">
-        <form action="">
+        <form id="myForm">
             <div class="slider age">
                 <div class="data">
-                    <label for="myRange" class="text">Age</label>
-                    <span class="number">70</span>
+                    <label for="age" class="text">Age</label>
+                    <span class="ageNumber">70</span>
                 </div>
                 <div class="range">
-                    <input type="range" min="1" max="100" value="50" class="sliderRange" id="myRange">
+                    <input oninput="app.handleAgeOnInput(event)" type="range" min="14" max="70" value="70" class="sliderRange" name="age" id="age">
                 </div>
             </div>
             <div class="slider height">
                 <div class="data">
-                    <label for="myRange2" class="text">Height (cm)</label>
-                    <span class="number">220</span>
+                    <label for="height" class="text">Height (cm)</label>
+                    <span class="heightNumber">180</span>
                 </div>
                 <div class="range">
-                    <input type="range" min="1" max="100" value="50" class="sliderRange" id="myRange2">
+                    <input oninput="app.handleHeightOnInput(event)" type="range" min="140" max="220" value="180" class="sliderRange" name="height" id="height">
                 </div>
             </div>
             <div class="select hairColor">
@@ -61,13 +61,13 @@
             <div class="radio hairLength">
                 <span>Hair Length</span>
                 <div class="inputs">
-                    <input type="radio" name="hair" value="long" id="longH" checked="checked">
+                    <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="long" id="longH" checked="checked">
                     <label for="longH" class="checked">long</label>
-                    <input type="radio" name="hair" value="middle" id="middleH">
+                    <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="middle" id="middleH">
                     <label for="middleH">middle</label>
-                    <input type="radio" name="hair" value="short" id="shortH">
+                    <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="short" id="shortH">
                     <label for="shortH">short</label>
-                    <input type="radio" name="hair" value="bald" id="baldH">
+                    <input type="radio" onchange="app.handleHairLengthChange(event)" name="hair" value="bald" id="baldH">
                     <label for="baldH">bald</label>
                 </div>
             </div>
@@ -97,20 +97,20 @@
             <div class="radio beard">
                 <span>Beard</span>
                 <div class="inputs">
-                    <input type="radio" name="beard" value="none" id="none" checked="checked">
-                    <label for="none" class="checked">
+                    <input type="radio" onchange="app.handleBeardChange(event)" name="beard" value="none" id="none" checked="checked">
+                    <label for="none" id="noneLabel" class="checked">
                         <img src="http://kamelrechner.de/img/beard-none.png" alt="none">
                     </label>
-                    <input type="radio" name="beard" value="small" id="small">
-                    <label for="small">
+                    <input type="radio" onchange="app.handleBeardChange(event)" name="beard" value="small" id="small">
+                    <label for="small" id="smallLabel">
                         <img src="http://kamelrechner.de/img/beard-small.png" alt="small">
                     </label>
-                    <input type="radio" name="beard" value="middle" id="middle">
-                    <label for="middle">
+                    <input type="radio" onchange="app.handleBeardChange(event)" name="beard" value="middle" id="middle">
+                    <label for="middle" id="middleLabel">
                         <img src="http://kamelrechner.de/img/beard-middle.png" alt="middle">
                     </label>
-                    <input type="radio" name="beard" value="large" id="large">
-                    <label for="large">
+                    <input type="radio" onchange="app.handleBeardChange(event)" name="beard" value="large" id="large">
+                    <label for="large" id="largeLabel">
                         <img src="http://kamelrechner.de/img/beard-full.png" alt="large">
                     </label>
                 </div>
@@ -119,16 +119,16 @@
             <div class="radio body">
                 <span>Body</span>
                 <div class="inputs">
-                    <input type="radio" name="body" value="muscle" id="muscle" checked="checked">
-                    <label for="muscle">
+                    <input type="radio" onchange="app.handleBodyChange(event)" name="body" value="muscle" id="muscle" checked="checked">
+                    <label for="muscle" id="muscleLabel">
                         <img src="http://kamelrechner.de/img/body-1.png" alt="muscle">
                     </label>
-                    <input type="radio" name="body" value="normal" id="normal">
-                    <label for="normal">
+                    <input type="radio" onchange="app.handleBodyChange(event)" name="body" value="normal" id="normal">
+                    <label for="normal" id="normalLabel">
                         <img src="http://kamelrechner.de/img/body-2.png" alt="normal">
                     </label>
-                    <input type="radio" name="body" value="chubby" id="chubby">
-                    <label for="chubby">
+                    <input type="radio" onchange="app.handleBodyChange(event)" name="body" value="chubby" id="chubby">
+                    <label for="chubby" id="chubbyLabel">
                         <img src="http://kamelrechner.de/img/body-3.png" alt="chubby">
                     </label>
                 </div>
@@ -139,6 +139,9 @@
                 <button type="submit">calculate</button>
             </div>
         </form>
+        <div class="result">
+            
+        </div>
         <br>
         <br>
         <hr>
