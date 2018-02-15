@@ -25,9 +25,18 @@ async function postData(uri, data, fetch) {
 	}
 }
 
+function handleShowResult(form, value) {
+	form.style.display = 'none';
+	document.querySelector('.result').style.display = 'block';
+	const countElement = document.querySelector('#count');
+	for (let i = 0; i <= value; i += 1) {
+		setTimeout(() => countElement.innerHTML = i, i * 20);
+	}
+}
 const service = {
 	getFormData,
-	postData
+	postData,
+	handleShowResult,
 };
 
 module.exports = service;

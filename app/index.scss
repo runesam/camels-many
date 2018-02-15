@@ -265,7 +265,81 @@ body {
         text-decoration: none;
         text-align: center;
       }
-      @media screen and (min-width: 550px){
+      .result {
+        display: none;
+        .data {
+          text-align: center;
+          h3 {
+            font-size: 1.7em;
+            font-weight: normal;
+            margin-bottom: 10px;
+          }
+          h1 {
+            font-size: 4em;
+            margin: 0;
+          }
+          span {
+            font-size: 1.5em;
+          }
+        }
+        .socials {
+          margin-top: 25px;
+          button {
+            width: 100%;
+            border: none;
+            outline: none;
+            color: white;
+            line-height: 40px;
+            margin-bottom: 5px;
+            @include borderRadius(5px);
+            font-size: 1em;
+            background-color: #00cdff;
+            &:first-child {
+              background-color: #305c99;
+            }
+            &:last-child {
+              background-color: #25D366;
+            }
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          @media screen and (min-width: 750px) {
+            width: 500px;
+            display: block;
+            margin: 0 auto;
+            padding-top: 25px;
+            button {
+              width: calc((100% / 3) - 10px);
+              font-size: 0.7em;
+              margin-right: 5px;
+              &:last-child {
+                margin: 0;
+              }
+            }
+          }
+        }
+        .reset {
+          margin-top: 15px;
+          button {
+            width: 100%;
+            border: none;
+            outline: none;
+            color: white;
+            line-height: 40px;
+            font-size: 1em;
+            margin-bottom: 5px;
+            background-color: #e8972c;
+            text-transform: uppercase;
+            @include borderRadius(5px);
+            &:hover {
+              cursor: pointer;
+              background-color: chocolate;
+            }
+          }
+        }
+      }
+      @media screen and (min-width: 550px) {
         width: 80%;
         margin: 0 auto;
         padding: 0;
@@ -359,6 +433,15 @@ body {
           button {
             line-height: 60px;
             width: 60%;
+          }
+        }
+        .result {
+          .reset {
+            button {
+              width: 300px;
+              display: block;
+              margin: 0 auto;
+            }
           }
         }
       }

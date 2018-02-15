@@ -8,16 +8,21 @@ class App {
 		this.handleHairLengthChange = this.handleHairLengthChange.bind(this);
 		this.handleBeardChange = this.handleBeardChange.bind(this);
 		this.handleBodyChange = this.handleBodyChange.bind(this);
+		this.handleReset = this.handleReset.bind(this);
 		window.addEventListener('load', this.onWindowLoad, false);
 	}
 	onWindowLoad() {
-		this.form = document.getElementById("myForm");
-		this.form.addEventListener('submit', (event) => {
-			event.preventDefault();
-			// request goes here
-			// utils.postData('result', utils.getFormData(this.form)).then(res => console.log(res));
-
-		});
+		if (this) {
+			this.form = document.getElementById("myForm");
+			this.form.addEventListener('submit', (event) => {
+				event.preventDefault();
+				const body = utils.getFormData(this.form);
+				console.log(body);
+				// request goes here
+				// utils.postData('result', body).then(res => console.log(res));
+				utils.handleShowResult(this.form, 70);
+			});
+		}
 	}
 	handleAgeOnInput(e) {
 		const { value } = e.target;
@@ -55,6 +60,10 @@ class App {
 				dom.className = 'checked';
 			}
 		});
+	}
+	handleReset() {
+		document.querySelector('form').style.display = 'block';
+		document.querySelector('.result').style.display = 'none';
 	}
 }
 
